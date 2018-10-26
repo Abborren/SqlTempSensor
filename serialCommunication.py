@@ -34,7 +34,6 @@ def get_request(serial):
     request = serial.readline()
     print ("serial reading is complete.")
     request = request.rstrip("\n")
-    today = datetime.date.min
     arr = [time.strftime("%Y-%m-%d"),time.strftime("%H:%M"),request]
     print (time.strftime("%Y-%m-%d")+" "+time.strftime("%H:%M"))
     add_to_database(arr)
