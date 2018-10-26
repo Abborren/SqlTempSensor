@@ -3,17 +3,17 @@ import datetime
 import serial
 
 
-# import dBConnetion
+from dBConnetion import open_connection,close_connection
 
 
 
 
 def loop():
     while True:
-        if datetime.datetime.now().minute % 1 == 0:
+        if datetime.datetime.now().minute % 5 == 0:
             print ("getting data...")
             serial_io()
-            time.sleep(59)
+            time.sleep(60)
 
 
 def add_to_database(arr):
@@ -39,7 +39,6 @@ def get_request(serial):
     print (time.strftime("%Y-%m-%d")+" "+time.strftime("%H:%M"))
     add_to_database(arr)
     print ("#########################newline#######################")
-
 
 
 def send_request(serial):
