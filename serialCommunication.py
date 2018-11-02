@@ -9,7 +9,7 @@ def loop():
     while True:
         if datetime.datetime.now().minute % 5 == 0:
             print ("getting data...")
-            serial_io()
+            request_reading(ser)
             time.sleep(60)
 
 
@@ -51,10 +51,6 @@ def request_reading(serial):
     add_to_database(arr)
     print arr
     print ("#########################newline#######################")
-
-
-def serial_io():
-    request_reading(ser)
 
 
 ser = serial.Serial(
