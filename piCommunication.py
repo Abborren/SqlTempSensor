@@ -5,7 +5,6 @@ import time
 
 from dBConnetion import open_connection, close_connection
 
-
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
@@ -69,5 +68,6 @@ def get_reading():
         return temp_c
 
 
-time.sleep(2)
+print ("SQL communication will begin in 10 seconds")
+time.sleep(10)
 loop()
