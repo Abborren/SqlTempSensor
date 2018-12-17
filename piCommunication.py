@@ -25,7 +25,7 @@ def add_to_database(arr):
     my_db = open_connection()
     my_cursor = my_db.cursor()
 
-    sql = "INSERT INTO inside (date, time, temp) VALUES (%s,%s,%s)"
+    sql = "INSERT INTO inside (datetime, temp) VALUES (%s,%s)"
     my_cursor.execute(sql, arr)
     my_db.commit()
     print("sql sent : " + sql)
@@ -43,7 +43,7 @@ def get_request():
             request = (request + temp_reading) / 2
         time.sleep(1)
 
-    arr = [time.strftime("%Y-%m-%d"), time.strftime("%H:%M"), request]
+    arr = [time.time(), request]
     add_to_database(arr)
     print arr
     print ("#########################newline#######################")
