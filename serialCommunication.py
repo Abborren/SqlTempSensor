@@ -18,7 +18,7 @@ def add_to_database(arr):
 
     my_cursor = my_db.cursor()
 
-    sql = "INSERT INTO inside (datetime, temp) VALUES (%s,%s)"
+    sql = "INSERT INTO outside (datetime, temp) VALUES (%s,%s)"
     my_cursor.execute(sql, arr)
     my_db.commit()
     print("sql sent : " + sql)
